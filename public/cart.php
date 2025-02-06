@@ -3,15 +3,17 @@ session_start();
 
 use App\Classes\Cart;
 use App\Classes\CartProducts;
+use App\Database\Models\Read;
 
 require "../vendor/autoload.php";
 
-$cartProducts = new CartProducts(new Cart);
+
+$cartProducts = new CartProducts();
 
 //(new Cart)->clear();
 //var_dump($cartProducts->products());
 
-$products = $cartProducts->products();
+$products = $cartProducts->products(new Cart);
 
 ?>
 
