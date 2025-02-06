@@ -27,7 +27,15 @@ class Cart implements CartInterface
     } // remove
 
     
-    public function quantity($product, $quantity){}
+    public function quantity($product, $quantity){
+        if (isset($_SESSION['cart'][$product])) {
+            if ($quantity === 0 || $quantity === '') {
+                $this->remove($product);
+                return;
+            }
+            $_SESSION['cart'][$product] = $quantity;
+        }
+    } // quantity
     public function clear(){
         if (isset($_SESSION['cart'])) {
             unset($_SESSION['cart']);
