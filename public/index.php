@@ -11,10 +11,6 @@ $products = require "../App/Helpers/products.php";
 //var_dump($products);
 
 $cart = new Cart;
-$cart->clear();
-
-$cart->dump();
-
 
 $productsInCart = $cart->cart();
 
