@@ -20,7 +20,6 @@ $read = new Read;
 $products = $read->all('products');
 
 
-
 ?>
 
 <!DOCTYPE html>
