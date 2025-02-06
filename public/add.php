@@ -14,5 +14,4 @@ $cart->add($id);
 
 
 
-$cart->dump();
-?>
+header("Location: /");

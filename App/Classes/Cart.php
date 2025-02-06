@@ -21,9 +21,18 @@ class Cart implements CartInterface
 
     public function remove($product){
 
-    }
+        if(isset($_SESSION['cart'][$product])){
+            unset($_SESSION['cart'][$product]);
+        }
+    } // remove
+
+    
     public function quantity($product, $quantity){}
-    public function clear(){}
+    public function clear(){
+        if (isset($_SESSION['cart'])) {
+            unset($_SESSION['cart']);
+        }
+    }// clear
     public function cart(){
         if(isset($_SESSION['cart'])){
             return $_SESSION['cart'];
